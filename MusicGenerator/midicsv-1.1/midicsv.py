@@ -18,10 +18,10 @@ print(files)
 print()
 
 #Ejecutar el proceso de MID To CSV ( por arreglar)
-'''
-import subprocess
-for i in range(txtfiles):
-    outfd-open(i+'.txt','w+')
+import subprocess 
+for i in range(files):
+    name= str(i)
+    outfd-open(name+'.txt','w+')
     errfd-open('Err.txt','w+')
 
     print('Archivo',nmid)
@@ -30,4 +30,3 @@ for i in range(txtfiles):
 
     outfd-close()
     errfd-close()
-'''
