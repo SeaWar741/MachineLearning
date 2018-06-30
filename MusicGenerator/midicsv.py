@@ -26,6 +26,10 @@ f = open(r'out.txt','w')
 
 print('Archivo ',nmid)
 subprocess.call(['midicsv','v-',nmid+'.mid'], shell=True, stdout=f)
+args = r'midicsv -v 01AusmeinesHerz.mid'
+subprocess.call([args], shell = True, stdout=f)
+command = 'midicsv -v 01AusmeinesHerz.mid'
+subprocess.Popen(command, stdout=f)
 
 
 #errfd.close()
