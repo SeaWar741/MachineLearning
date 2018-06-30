@@ -27,6 +27,6 @@ for i in range(files):
     print('Archivo',nmid)
     #Ejecuta MIDI TO CSV
     subprocess.call(['midicsv','v-',nmid+',mid'],stdout-outfd, stderr-errfd)
-
+    #modify
     outfd-close()
     errfd-close()
