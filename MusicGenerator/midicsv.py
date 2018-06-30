@@ -14,25 +14,30 @@ for file in glob.glob("*.mid"):
     midfiles.append(file)
 
 #Imprimir y eliminar extension todos los archivos del directorio tipo MID
-#files = [x.replace('.mid','') for x in midfiles]
-#print(files)
+files = [x.replace('.mid','') for x in midfiles]
+#print(midfiles)
 #print()
 
 #Ejecutar el proceso de MID To CSV ( por arreglar)
-nmid = '01AusmeinesHerz'
 import subprocess
-f = open(r'out.txt','w')
 #errfd=open('Err.txt','w')
 
-print('Archivo ',nmid)
-subprocess.call(['midicsv','v-',nmid+'.mid'], shell=True, stdout=f)
-args = r'midicsv -v 01AusmeinesHerz.mid'
-subprocess.call([args], shell = True, stdout=f)
-command = 'midicsv -v 01AusmeinesHerz.mid'
-subprocess.Popen(command, stdout=f)
+#print('Archivo ',nmid)
+#print()
+#subprocess.call(['midicsv','v-',nmid+'.mid'], shell=True, stdout=f)
+#args = r'midicsv -v 01AusmeinesHerz.mid'
+#subprocess.call([args], shell = True, stdout=f)
 
+#command = 'midicsv -v 01AusmeinesHerz.mid'
+#subprocess.Popen(command, stdout=f)
 
-#errfd.close()
+for i in files:
+    name = str(i)
+    end_file = name+'.txt'
+    f = open(end_file,'w')
+    command = r'midicsv -v '+name+'.mid'
+    subprocess.Popen(command,stdout=f)
+    f.close()
 
 '''
 for i in files:
