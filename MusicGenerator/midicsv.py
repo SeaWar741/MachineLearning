@@ -18,37 +18,16 @@ files = [x.replace('.mid','') for x in midfiles]
 #print(midfiles)
 #print()
 
-#Ejecutar el proceso de MID To CSV ( por arreglar)
-import subprocess
-#errfd=open('Err.txt','w')
-
-#print('Archivo ',nmid)
-#print()
-#subprocess.call(['midicsv','v-',nmid+'.mid'], shell=True, stdout=f)
-#args = r'midicsv -v 01AusmeinesHerz.mid'
-#subprocess.call([args], shell = True, stdout=f)
-
-#command = 'midicsv -v 01AusmeinesHerz.mid'
-#subprocess.Popen(command, stdout=f)
-
-for i in files:
+#Ejecutar el proceso de MID To CSV
+import subprocess 
+for i in files:#loop que ejecuta el programa midcsv con cada archivo escaneado y posteriormente guarda la informacion en un txt con el mismo nombre del archivo original
     name = str(i)
     end_file = name+'.txt'
     f = open(end_file,'w')
     command = r'midicsv -v '+name+'.mid'
     subprocess.Popen(command,stdout=f)
     f.close()
+print()
+print("Conversion de Archivos MID a CSV Completada!")
 
-'''
-for i in files:
-    name= str(i)
-    outfd=open(name+'.txt','w+')
-    errfd=open('Err.txt','w+')
-
-    print('Archivo: ',i)
-    print()
-    #Ejecuta MIDI TO CSV
-    subprocess.call(['midicsv','v-',name+'.mid'], stdout=outfd, stderr=errfd)
-    outfd.close()
-    errfd.close()
-'''
+#Al terminar de entrenar el modelo comenzar con un menu para seleccionar si se desea convertir de MIDI a CSV o de CSV a MIDI
