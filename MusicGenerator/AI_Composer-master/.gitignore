@@ -1,0 +1,10 @@
+data
+2012code
+models
+python-midi
+research
+tensorflow
+
+*.midi
+*.pyc
+img/.DS_Store

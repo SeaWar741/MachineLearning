@@ -1,0 +1,6 @@
+Format 1 MIDI file.  5 tracks, 1024 ticks per quarter note.
+Track 1: length 446.
+Track 2: length 563.
+Track 3: length 707.
+Track 4: length 734.
+Track 5: length 734.

@@ -24,10 +24,13 @@ for i in files:#loop que ejecuta el programa midcsv con cada archivo escaneado y
     name = str(i)
     end_file = name+'.txt'
     f = open(end_file,'w')
+    errn = name+'_err.txt'
+    er = open(errn,'w')
     command = r'midicsv -v '+name+'.mid'
-    subprocess.Popen(command,stdout=f)
+    subprocess.Popen(command,stdout=f, stderr=er)
     f.close()
 print()
 print("Conversion de Archivos MID a CSV Completada!")
+print()
 
 #Al terminar de entrenar el modelo comenzar con un menu para seleccionar si se desea convertir de MIDI a CSV o de CSV a MIDI
